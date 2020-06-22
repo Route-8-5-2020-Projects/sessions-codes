@@ -17,7 +17,6 @@ int getOption()
 
 int main()
 {
-	cout << "OOP2";
 	Company company;
 	bool run = true;
 	while (run == true)
