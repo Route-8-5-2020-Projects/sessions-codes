@@ -16,6 +16,7 @@ public:
 	void addEmployee();
 	void changeDepartmentOfEmployee();
 	void printReport();
+	float addSalary(Employee e1, Employee e2);
 	Company();
 };
 

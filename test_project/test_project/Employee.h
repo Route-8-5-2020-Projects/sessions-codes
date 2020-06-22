@@ -8,10 +8,11 @@ private:
 	float salary;
 	int age, departmentID;
 public:
-	void setName(string n);
+	static int EmployeesCount;
+	void set(string n);
 	string getName();
 
-	void setSalary(float s);
+	void set(float s);
 	float getSalary();
 
 	void setAge(int a);
@@ -19,4 +20,11 @@ public:
 
 	void setDepartmentID(int id);
 	int getDepartmentID();
+
+	float addSalary(Employee e);
+	float operator ++();
+	float operator ++(int);
+	Employee operator +(Employee e2);
+	Employee();
+	Employee(string n, float s, int a, int id);
 };

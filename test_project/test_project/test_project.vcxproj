@@ -147,15 +147,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="Company.cpp" />
     <ClCompile Include="Department.cpp" />
+    <ClCompile Include="Distance.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="test_project.cpp" />
+    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Calculator.h" />
     <ClInclude Include="Company.h" />
     <ClInclude Include="Department.h" />
+    <ClInclude Include="Distance.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -37,10 +37,10 @@ void Company::addEmployee()
 	cin >> departmentId;
 
 	Employee employee;
-	employee.setName(name);
+	employee.set(name);
 	employee.setAge(age);
 	employee.setDepartmentID(departmentId);
-	employee.setSalary(salary);
+	employee.set(salary);
 
 	employees[numberOfEmployees] = employee;
 	numberOfEmployees++;
@@ -81,6 +81,11 @@ void Company::printReport()
 
 		cout << currentDepartment.getName() << " has " << employeesCount << " employees." << endl;
 	}
+}
+
+float Company::addSalary(Employee e1, Employee e2)
+{
+	return e1.getSalary() + e2.getSalary();
 }
 
 Company::Company() : numberOfEmployees(0), numberOfDepartments(0)
