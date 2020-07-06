@@ -1,14 +1,26 @@
 #include <iostream>
 #include "Vector.h"
 #include "Vector.cpp"
+#include "BST.h"
+#include "BST.cpp"
 using namespace std;
 int main()
 {
-	Vector<int> v;
-	v.push_back(3);
-	v.push_back(4);
-	v.push_back(7);
-	cout << v[0];
+	BST<int> bst;
+	bst.insert(5);
+	bst.insert(4);
+	bst.insert(4);
+	bst.insert(7);
+	bst.insert(6);
+	bst.insert(8);
 
+	if (bst.find(7))
+	{
+		cout << "Nice" << endl;
+	}
+	else
+	{
+		cout << "wrong answer" << endl;
+	}
 	return 0;
 }
