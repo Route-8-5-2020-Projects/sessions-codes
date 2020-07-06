@@ -9,6 +9,7 @@ public:
 	void append(int val);
 	void insert(int idx, int val);
 	void print();
+	void removeAt(int idx);
 	LinkedList();
 	~LinkedList();
 };

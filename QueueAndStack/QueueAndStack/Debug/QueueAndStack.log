@@ -1,0 +1,2 @@
+﻿  QueueAndStack.cpp
+C:\Users\DELL\Desktop\test_repo\QueueAndStack\QueueAndStack\QueueAndStack.cpp(7,2): error C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.

@@ -56,6 +56,29 @@ void LinkedList::print()
 	}
 }
 
+void LinkedList::removeAt(int idx)
+{
+	if (idx == 0)
+	{
+		Node* tmp = head->next;
+		delete head;
+		head = tmp;
+	}
+	else
+	{
+		Node* before = head;
+		int i = 0;
+		while (i < idx - 1)
+		{
+			before = before->next;
+			i++;
+		}
+		Node* after = before->next->next;
+		delete before->next;
+		before->next = after;
+	}
+}
+
 LinkedList::LinkedList() : head(nullptr), size(0)
 {
 
