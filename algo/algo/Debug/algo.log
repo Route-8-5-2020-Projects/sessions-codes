@@ -1,3 +1,4 @@
 ﻿  algo.cpp
-D:\Workspace\sessions-codes\algo\algo\algo.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
+D:\Workspace\sessions-codes\algo\algo\algo.cpp(20,20): warning C4018: '<': signed/unsigned mismatch
+D:\Workspace\sessions-codes\algo\algo\algo.cpp(57,21): warning C4018: '<': signed/unsigned mismatch
   algo.vcxproj -> D:\Workspace\sessions-codes\algo\Debug\algo.exe

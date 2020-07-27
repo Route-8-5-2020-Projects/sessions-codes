@@ -1,31 +1,12 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 using namespace std;
 
 bool found = false;
 int endNode;
-vector<vector<int>> graph;
-
-
-void dfs(int currentNode, int parentNode)
-{
-	if (currentNode == endNode)
-	{
-		found = true;
-		return;
-	}
-
-	for (int i = 0; i < graph[currentNode].size(); i++)
-	{
-		int child = graph[currentNode][i];
-
-		if (child != parentNode)
-		{
-			dfs(child, currentNode);
-		}
-	}
-
-}
+vector<vector<pair<int, int>>> graph;
+int length[10005];
 
 int main()
 {
@@ -34,17 +15,16 @@ int main()
 	graph.resize(nodes + 1);
 	for (int i = 0; i < edges; i++)
 	{
-		int u, v;
+		int u, v, cost;
 		cin >> u >> v;
-		graph[u].push_back(v);
-		graph[v].push_back(u);
+		graph[u].push_back({ v, cost });
+		graph[v].push_back({ u, cost });
 	}
 
-	//traversing
-	dfs(startNode, -1);
+	
 
 	if (found)
-		cout << "Yes there's a path";
+		cout << length[endNode];
 	else
 		cout << "No path found";
 	return 0;
