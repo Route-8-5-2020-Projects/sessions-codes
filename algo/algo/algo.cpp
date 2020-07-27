@@ -2,32 +2,35 @@
 #include <vector>
 using namespace std;
 
+bool found = false;
+int endNode;
+vector<vector<int>> graph;
 
-void constructingGraphUsingAdjMatrix(int nodes, int edges)
+
+void dfs(int currentNode, int parentNode)
 {
-	int graph[105][105] = {};
-	for (int i = 1; i <= nodes; i++)
-		graph[i][i] = 1;
-
-	for (int i = 1; i <= edges; i++)
+	if (currentNode == endNode)
 	{
-		int u, v;
-		cin >> u >> v;
-		graph[u][v] = 1;
-		graph[v][u] = 1;
+		found = true;
+		return;
 	}
 
-	for (int i = 1; i <= nodes; i++)
+	for (int i = 0; i < graph[currentNode].size(); i++)
 	{
-		for (int j = 1; j <= nodes; j++)
-			cout << graph[i][j] << ' ';
-		cout << endl;
+		int child = graph[currentNode][i];
+
+		if (child != parentNode)
+		{
+			dfs(child, currentNode);
+		}
 	}
+
 }
 
-void ConstructinGraphUsingAdjList(int nodes, int edges)
+int main()
 {
-	vector<vector<int>> graph;
+	int nodes, edges, startNode;
+	cin >> nodes >> edges >> startNode >> endNode;
 	graph.resize(nodes + 1);
 	for (int i = 0; i < edges; i++)
 	{
@@ -37,16 +40,12 @@ void ConstructinGraphUsingAdjList(int nodes, int edges)
 		graph[v].push_back(u);
 	}
 
-	for (int i = 1; i <= nodes; i++)
-	{
-		cout << "node " << i << " children: ";
-		for (int j = 0; j < graph[i].size(); j++)
-			cout << graph[i][j] << ' ';
-		cout << endl;
-	}
-}
+	//traversing
+	dfs(startNode, -1);
 
-int main()
-{
+	if (found)
+		cout << "Yes there's a path";
+	else
+		cout << "No path found";
 	return 0;
 }
